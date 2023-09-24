@@ -1,7 +1,6 @@
-import {Hono} from 'hono';
-import { Client } from '@neondatabase/serverless';
+import { Hono } from 'hono';
 import { ExecutionContext } from 'hono/dist/types/context';
-import {users} from './users/api';
+import { users } from './users/api';
 
 export interface Bindings {
 	DB_URL: string;
@@ -9,7 +8,7 @@ export interface Bindings {
 }
 
 // @ts-ignore
-const app = new Hono<{Bindings: Bindings}>();
-app.route("/api/users", users);
+const app = new Hono<{ Bindings: Bindings }>();
+app.route('/api/users', users);
 
 export default app;
