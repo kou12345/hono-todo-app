@@ -27,8 +27,6 @@ users.get('/', async (c) => {
 			} as User;
 		});
 		return new Response(JSON.stringify(users), { status: 200 });
-
-		// 	todo error handling
 	} catch (error) {
 		if (error instanceof Error) {
 			return new Response(error.message, { status: 500 });
