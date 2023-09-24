@@ -14,7 +14,7 @@ users.get('/', async (c) => {
 	try {
 		const client = new Client(c.env?.DB_URL as string);
 		await client.connect();
-		const { rows } = await client.query('SELECT * FROM user;');
+		const { rows } = await client.query('SELECT * FROM users;');
 		c.executionCtx.waitUntil(client.end());
 
 		const users = rows.map((row) => {
